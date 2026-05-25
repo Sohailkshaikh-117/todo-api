@@ -1,6 +1,11 @@
 const express = require('express');
-const todoRouter = require('./routes/todoRoutes');
+const todoRouter = require('./src/routes/todoRoutes');
+const ensureDbFileExists = require('./src/initializers/ensureDbExists');
 
+// Ensuring the todo data storage file exist on server start
+ensureDbFileExists();
+
+// Creating node web server
 const app = express();
 const paths = {
     todos: '/todos',

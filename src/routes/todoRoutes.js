@@ -1,5 +1,5 @@
 const express = require('express');
-const todoController = require('../../controllers/todoController');
+const todoController = require('../controllers/todoController');
 const router = express.Router();
 
 const paths = {
