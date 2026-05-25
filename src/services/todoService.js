@@ -1,13 +1,13 @@
 
 const getAllTodos = () => { };
 
-const getTodoById = () => { };
+const getTodoById = (id) => { };
 
-const addNewTodo = () => { };
+const addNewTodo = (title, description, tag) => { };
 
-const updateTodoById = () => { };
+const updateTodoById = (id) => { };
 
-const deleteTodoById = () => { };
+const deleteTodoById = (id) => { };
 
 const deleteAllTodos = () => { };
 
