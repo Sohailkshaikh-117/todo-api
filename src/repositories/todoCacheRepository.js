@@ -1,9 +1,17 @@
 
 // a todo cache as array of objects to maintain a sorted list ready
-const todoCache = [];
+const isTodoCached = false;
+const todoCache = {};
 
-const readCache = () => {
+const initTodoCache = () => {
+    isTodoCached = true;
+
 
 };
 
-module.exports = todoCache;
+// const readCache = () => { };
+
+module.exports = {
+    isTodoCached,
+    todoCache,
+};

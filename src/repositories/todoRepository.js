@@ -1,5 +1,6 @@
 const envConfig = require('../../config/config');
 const fs = require('fs');
+const initTodoModel = require('../models/initUserTodoListModel');
 
 const readTodoData = () => {
     try {
@@ -7,8 +8,13 @@ const readTodoData = () => {
         return JSON.parse(todoData);
     }
     catch (e) {
+        if (e.code === 'ENOENT') {
+            console.log('[WARNING] File absent, creting new file at path:', envConfig.todo_db_file_path);
+            fs.writeFileSync(envConfig.todo_db_file_path, JSON.stringify(initTodoModel, null, 2));
+            return initTodoModel;
+        }
         console.log('[ERROR] Cannot read todo data, error: ', e);
-        return {};
+        return initTodoModel;
     }
 };
 
@@ -23,6 +29,8 @@ const writeTodoData = (data) => {
         return false;
     }
 };
+
+readTodoData();
 
 module.exports = {
     readTodoData,
