@@ -1,6 +1,8 @@
 const todoService = require('../services/todoService');
 
-const getAllTodos = (request, response) => { };
+const getAllTodos = (request, response) => {
+    const allTodos = todoService.getAllTodos();
+};
 
 const getTodoById = (request, response) => { };
 
