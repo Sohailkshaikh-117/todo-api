@@ -16,6 +16,7 @@ const dbFile = require('../repositories/todoRepository');
  * @param {array} filter.tag - multiple tags to filter by
  */
 const getAllTodos = (
+    userId,
     limitPerPage = 10,
     pageNumber = 1,
     searchKeyword = '',

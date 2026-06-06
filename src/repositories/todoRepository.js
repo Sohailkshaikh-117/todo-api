@@ -9,7 +9,7 @@ const readTodoData = () => {
     }
     catch (e) {
         if (e.code === 'ENOENT') {
-            console.log('[WARNING] File absent, creting new file at path:', envConfig.todo_db_file_path);
+            console.log('[WARNING] File absent, creating new file at path:', envConfig.todo_db_file_path);
             fs.writeFileSync(envConfig.todo_db_file_path, JSON.stringify(initTodoModel, null, 2));
             return initTodoModel;
         }
