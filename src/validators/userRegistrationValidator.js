@@ -1,11 +1,17 @@
+const messages = require('../utils/messages');
 
 const validateUsername = username => {
     if (!username) return {
         isValid: false,
-        message: 'Username not found',
-        messageCode: '001',
+        message: messages['001'],
+        errorCode: '001',
     }
 
+    if (!password) return {
+        success: false,
+        message: messages['002'],
+        errorCode: '002',
+    }
 
 };
 
