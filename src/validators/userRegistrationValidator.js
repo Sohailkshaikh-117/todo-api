@@ -6,14 +6,15 @@ const validateUsername = username => {
         message: messages['001'],
         errorCode: '001',
     }
+};
 
+const validatePassword = password => {
     if (!password) return {
         success: false,
         message: messages['002'],
         errorCode: '002',
     }
-
-};
+}
 
 const registrationValidator = (request, response, next) => {
     const { username, password } = request.body;
