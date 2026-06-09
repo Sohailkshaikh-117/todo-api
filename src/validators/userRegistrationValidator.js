@@ -10,7 +10,7 @@ const validateUsername = username => {
 
 const validatePassword = password => {
     if (!password) return {
-        success: false,
+        isValid: false,
         message: messages['002'],
         errorCode: '002',
     }
@@ -26,7 +26,7 @@ const registrationValidator = (request, response, next) => {
         response.status(404).send({
             success: false,
             message: usernameValidity.message,
-            messageCode: usernameValidity.messageCode,
+            errorCode: usernameValidity.errorCode,
         });
     }
 
@@ -34,7 +34,7 @@ const registrationValidator = (request, response, next) => {
         response.status(404).send({
             success: false,
             message: passwordValidity.message,
-            messageCode: passwordValidity.messageCode,
+            errorCode: passwordValidity.errorCode,
         });
     }
 
