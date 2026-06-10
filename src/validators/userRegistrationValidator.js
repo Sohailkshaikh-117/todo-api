@@ -6,13 +6,37 @@ const validateUsername = username => {
         message: messages['001'],
         errorCode: '001',
     }
+
+    const regex = /[a-b]/;
+
+    if (regex.test(username)) {
+        return { isValid: true, }
+    }
+
+    return {
+        isValid: false,
+        message: messages['003'],
+        errorCode: '003',
+    }
 };
 
 const validatePassword = password => {
     if (!password) return {
         isValid: false,
-        message: messages['002'],
-        errorCode: '002',
+        message: messages['003'],
+        errorCode: '003',
+    }
+
+    const regex = /[a-b]/;
+
+    if (regex.test(password)) {
+        return { isValid: true, }
+    }
+
+    return {
+        isValid: false,
+        message: messages['001'],
+        errorCode: '001',
     }
 }
 
