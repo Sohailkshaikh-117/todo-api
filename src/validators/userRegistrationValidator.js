@@ -7,7 +7,7 @@ const validateUsername = username => {
         errorCode: '001',
     }
 
-    const regex = /[a-b]/;
+    const regex = /?+=(^[A-ba-b0-9]${8, 21})/;
 
     if (regex.test(username)) {
         return { isValid: true, }
@@ -27,7 +27,7 @@ const validatePassword = password => {
         errorCode: '003',
     }
 
-    const regex = /[a-b]/;
+    const regex = /?+=(^[A-ba-b0-9]${8, 21})/;
 
     if (regex.test(password)) {
         return { isValid: true, }
