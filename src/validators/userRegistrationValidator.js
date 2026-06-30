@@ -23,8 +23,8 @@ const validateUsername = username => {
 const validatePassword = password => {
     if (!password) return {
         isValid: false,
-        message: messages['003'],
-        errorCode: '003',
+        message: messages['001'],
+        errorCode: '001',
     }
 
     const regex = /?+=(^[A-ba-b0-9]${8, 21})/;
@@ -35,8 +35,8 @@ const validatePassword = password => {
 
     return {
         isValid: false,
-        message: messages['001'],
-        errorCode: '001',
+        message: messages['004'],
+        errorCode: '004',
     }
 }
 
