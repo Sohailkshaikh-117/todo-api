@@ -43,9 +43,11 @@ const validatePassword = password => {
 const registrationValidator = (request, response, next) => {
     const { username, password } = request.body;
 
+    // validate credentials
     const usernameValidity = validateUsername(username);
     const passwordValidity = validatePassword(password);
 
+    // send response - invalid credentials
     if (!usernameValidity.isValid) {
         response.status(404).send({
             success: false,
